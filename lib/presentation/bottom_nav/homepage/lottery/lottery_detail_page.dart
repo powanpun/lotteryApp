@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:predictandwin/global_widget/buttons/custom_geen_button.dart';
 import 'package:predictandwin/global_widget/buttons/custome_back_button.dart';
-import 'package:predictandwin/global_widget/buttons/custome_button_yellow.dart';
 import 'package:predictandwin/resources/appColor/app_colors.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
 import 'package:predictandwin/utils/screensize.dart';

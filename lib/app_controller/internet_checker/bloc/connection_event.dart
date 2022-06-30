@@ -10,9 +10,9 @@ abstract class ConnectionEvent extends Equatable {
 class ListenConnection extends ConnectionEvent {}
 
 class ConnectionChanged extends ConnectionEvent {
-  ConnectionCheckerState connection;
+  final ConnectionCheckerState connection;
 
-  ConnectionChanged(this.connection);
+  const ConnectionChanged(this.connection);
   @override
   List<Object> get props => [connection];
 }

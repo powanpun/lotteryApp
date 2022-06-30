@@ -1,16 +1,11 @@
-import 'dart:developer';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:predictandwin/_router/router.dart';
 import 'package:predictandwin/app_controller/authentication/bloc/authentication_bloc.dart';
-import 'package:predictandwin/data_layer/repositories/authentication_repository.dart';
 import 'package:predictandwin/global_widget/buttons/facebook_button.dart';
 import 'package:predictandwin/global_widget/buttons/google_button.dart';
-import 'package:predictandwin/resources/AppColor/app_colors.dart';
-import 'package:predictandwin/resources/material_icons/material_icons.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
+import 'package:predictandwin/utils/padding.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -26,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(body: BlocBuilder<AuthenticationBloc, AuthenticationState>(
       builder: (context, state) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: padding16x32(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -40,11 +35,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               customSizedBoxh8(),
               InkWell(
-                onTap: () {
-                  context
-                      .read<AuthenticationBloc>()
-                      .add(GoogleSignInRequested());
-                },
+                onTap: () {},
                 child: const FacebookButton(),
               ),
             ],

@@ -3,6 +3,7 @@ import 'package:predictandwin/resources/app_constants/app_text.dart';
 import 'package:predictandwin/resources/assets_manager/assets_manager.dart';
 import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
+import 'package:predictandwin/utils/padding.dart';
 
 class GoogleButton extends StatelessWidget {
   const GoogleButton({
@@ -12,12 +13,12 @@ class GoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: CustomeBoxDecoration8(),
-        padding: const EdgeInsets.all(16),
+        decoration: customeBoxDecoration8(),
+        padding: padding16(),
         child: Row(
           children: [
             Image.asset(
-              AssetManager.google_logo,
+              AssetManager.googleLogo,
               scale: 3,
             ),
             customSizedBoxw16(),

@@ -4,6 +4,7 @@ import 'package:predictandwin/resources/app_constants/app_text.dart';
 import 'package:predictandwin/resources/material_icons/material_icons.dart';
 import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
+import 'package:predictandwin/utils/padding.dart';
 
 class FacebookButton extends StatelessWidget {
   const FacebookButton({
@@ -13,12 +14,12 @@ class FacebookButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: CustomeBoxDecoration8(),
-        padding: const EdgeInsets.all(16),
+        decoration: customeBoxDecoration8(),
+        padding: padding16(),
         child: Row(
           children: [
             Icon(
-              AppMaterialIcons.facebook_rounded,
+              AppMaterialIcons.facebookRounded,
               color: AppColors.facebookBlue,
             ),
             customSizedBoxw16(),
