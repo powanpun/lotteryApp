@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501188029360",
+    "project_id": "predict-and-win-1e3f2",
+    "storage_bucket": "predict-and-win-1e3f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501188029360:android:7bc54a25d9d0d277c48475",
+        "android_client_info": {
+          "package_name": "com.perscreation.predictandwin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501188029360-j8tl5rlt4idfkshgpr13c5g2ih6dsmh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUrkou16wcn5eBC74LRlt2o-9VmVVBo4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501188029360-j8tl5rlt4idfkshgpr13c5g2ih6dsmh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
