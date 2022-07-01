@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:predictandwin/_router/router.dart';
 import 'package:predictandwin/resources/AppColor/app_colors.dart';
 
 class TitleBar extends StatelessWidget {
@@ -44,11 +45,14 @@ class TitleBar extends StatelessWidget {
             shadowColor: AppColors.mainColor,
             elevation: 4,
             shape: BoxShape.circle,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(100),
-              child: Image.network(
-                "https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840_960_720.jpg",
-                fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () => Navigator.pushNamed(context, profilePageRoute),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: Image.network(
+                  "https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840_960_720.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

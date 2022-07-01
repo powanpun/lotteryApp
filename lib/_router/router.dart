@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/lottery/lottery_detail_page.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/prediction/prediction_detail.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/profile/profile_page.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/weekly_lottery/weekly_lottery.dart';
 
 import '../app_controller/bottom_navigation/bottom_navigation.dart';
@@ -13,7 +14,7 @@ const String bottomNavigationRoute = "/bottomNavigation";
 const String fortuneWheelPageRoute = "/fortuneWheelPage";
 const String lotteryDetailPageRoute = "/lotteryDetailPage";
 const String weeklylotteryPageRoute = "/weeklylotteryPage";
-
+const String profilePageRoute = "/profilePage";
 const String predictionDetailPageRoute = "/predictionDetailPage";
 
 class AppRoute {
@@ -38,6 +39,9 @@ class AppRoute {
       case predictionDetailPageRoute:
         return CostumPageRouteFadeIn(
             builder: (context) => const PredictionDetailPage());
+      case profilePageRoute:
+        return CostumPageRoutTop(builder: (context) => const ProfilePage());
+
       default:
         return _errorRoute();
     }

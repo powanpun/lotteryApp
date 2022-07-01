@@ -35,62 +35,79 @@ class FeaturedPredictionList extends StatelessWidget {
               SizedBox(
                 height: getScreemWidth(context) / 3,
                 width: double.infinity,
-                child: ListView.builder(
+                child: CustomScrollView(
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
                   scrollDirection: Axis.horizontal,
-                  itemCount: state.predictions.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () => Navigator.pushNamed(
-                          context, predictionDetailPageRoute),
-                      child: Container(
-                        decoration: customeBoxDecoration(),
-                        width: getScreemWidth(context) / 3,
-                        height: getScreemWidth(context) / 3,
-                        margin: const EdgeInsets.only(right: 8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
+                  slivers: [
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (BuildContext context, int index) {
+                          return InkWell(
+                            onTap: () => Navigator.pushNamed(
+                                context, predictionDetailPageRoute),
+                            child: Container(
+                              decoration: customeBoxDecoration(),
+                              width: getScreemWidth(context) / 3,
                               height: getScreemWidth(context) / 3,
-                              width: double.infinity,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Stack(
-                                      fit: StackFit.passthrough,
-                                      children: [
-                                        Image.network(
-                                          state.predictions[index].image,
-                                          fit: BoxFit.cover,
-                                        ),
-                                        Container(
-                                          alignment: Alignment.bottomCenter,
-                                          child: Container(
-                                            decoration: const BoxDecoration(
-                                                color: AppColors.blackLight,
-                                                borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(8),
-                                                    bottomRight:
-                                                        Radius.circular(8))),
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 8),
-                                            width: double.infinity,
-                                            child: Text(
-                                                state.predictions[index].title,
-                                                textAlign: TextAlign.center,
-                                                style: GoogleFonts.lato(
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: AppColors.white)),
-                                          ),
-                                        ),
-                                      ])),
+                              margin: const EdgeInsets.only(right: 8),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: getScreemWidth(context) / 3,
+                                    width: double.infinity,
+                                    child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(16),
+                                        child: Stack(
+                                            fit: StackFit.passthrough,
+                                            children: [
+                                              Image.network(
+                                                state.predictions[index].image,
+                                                fit: BoxFit.cover,
+                                              ),
+                                              Container(
+                                                alignment:
+                                                    Alignment.bottomCenter,
+                                                child: Container(
+                                                  decoration: const BoxDecoration(
+                                                      color:
+                                                          AppColors.blackLight,
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                              bottomLeft: Radius
+                                                                  .circular(8),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          8))),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(vertical: 8),
+                                                  width: double.infinity,
+                                                  child: Text(
+                                                      state.predictions[index]
+                                                          .title,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: GoogleFonts.lato(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color:
+                                                              AppColors.white)),
+                                                ),
+                                              ),
+                                            ])),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ],
-                        ),
+                          );
+                        },
+                        childCount: state.predictions.length,
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
               ),
             ],

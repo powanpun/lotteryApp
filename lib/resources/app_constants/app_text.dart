@@ -7,4 +7,8 @@ class AppText {
   static const String homepageLotteryTitleText = "Feeling lucky?";
   static const String homepageLotterySubTitleText = "Win exclusive prizes now.";
   static const String homepageLotteryButtonText = "Enroll Now";
+
+  //Homepage fortune section
+  static const String homepageFortuneTitleText = " Test Your Day";
+  static const String homepageFortuneButtonText = "Join Now";
 }
