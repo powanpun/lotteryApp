@@ -11,3 +11,7 @@ BoxDecoration customeBoxDecoration8() {
   return BoxDecoration(
       borderRadius: BorderRadius.circular(8), color: AppColors.backgroundGrey2);
 }
+
+BoxDecoration customeBoxDecorationColor(Color color) {
+  return BoxDecoration(borderRadius: BorderRadius.circular(8), color: color);
+}

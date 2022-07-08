@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:predictandwin/_router/router.dart';
-import 'package:predictandwin/global_widget/buttons/custom_rounded-button.dart';
+import 'package:predictandwin/global_widget/buttons/custom_rounded_button.dart';
 import 'package:predictandwin/resources/appColor/app_colors.dart';
 import 'package:predictandwin/resources/app_constants/app_text.dart';
 import 'package:predictandwin/utils/boxdecorations.dart';

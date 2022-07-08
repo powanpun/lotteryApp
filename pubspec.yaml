@@ -43,6 +43,7 @@ dependencies:
   connectivity_plus: ^2.3.4
   flutter_fortune_wheel: ^1.2.0
   lottie: ^1.3.0
+  badges:
 
 dev_dependencies:
   flutter_test:

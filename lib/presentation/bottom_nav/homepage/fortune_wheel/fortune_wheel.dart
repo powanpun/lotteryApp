@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
@@ -31,7 +32,7 @@ class _FortuneWheelPageState extends State<FortuneWheelPage> {
   void initState() {
     selected.stream.listen((event) {
       result = event;
-      log(result.toString());
+      // log(result.toString());
     });
 
     super.initState();
@@ -61,54 +62,85 @@ class _FortuneWheelPageState extends State<FortuneWheelPage> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: FortuneWheel(
-                    physics: NoPanPhysics(),
-                    animateFirst: false,
-                    selected: selected.stream,
-                    indicators: <FortuneIndicator>[
-                      FortuneIndicator(
-                        alignment: Alignment
-                            .topCenter, // <-- changing the position of the indicator
-                        child: TriangleIndicator(
-                          color: AppColors
-                              .yellow, // <-- changing the color of the indicator
-                        ),
-                      ),
-                    ],
-                    items: [
-                      for (var it in items)
-                        FortuneItem(
-                            child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Text(it,
-                                  textAlign: TextAlign.end,
-                                  style: GoogleFonts.lato(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.white)),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    FortuneWheel(
+                        physics: NoPanPhysics(),
+                        animateFirst: false,
+                        selected: selected.stream,
+                        indicators: <FortuneIndicator>[
+                          FortuneIndicator(
+                            alignment: Alignment
+                                .topCenter, // <-- changing the position of the indicator
+                            child: TriangleIndicator(
+                              color: AppColors
+                                  .yellow, // <-- changing the color of the indicator
                             ),
-                          ],
-                        )),
-                    ],
-                    onAnimationEnd: () {
-                      if (spinsLeft <= 0) {
-                        setState(() {
-                          buttonText = "Get more spins";
-                        });
-                      }
-                      if (result == 0) {
-                        log("try again");
-                      } else if (result == 1) {
-                        log(" hurray");
-                      } else if (result % 2 == 0) {
-                        log("try again");
-                      } else {
-                        log(" hurray");
-                      }
-                    }),
+                          ),
+                        ],
+                        items: [
+                          for (var it in items)
+                            FortuneItem(
+                                style: FortuneItemStyle(
+                                  color: AppColors
+                                      .mainColor, // <-- custom circle slice fill color
+                                  borderColor: Colors
+                                      .white, // <-- custom circle slice stroke color
+                                  borderWidth:
+                                      1, // <-- custom circle slice stroke width
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Text(it,
+                                          textAlign: TextAlign.end,
+                                          style: GoogleFonts.lato(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.white)),
+                                    ),
+                                  ],
+                                )),
+                        ],
+                        onAnimationEnd: () {
+                          if (spinsLeft <= 0) {
+                            setState(() {
+                              buttonText = "Get more spins";
+                            });
+                          }
+                          if (result == 0) {
+                            // log("try again");
+                          } else if (result == 1) {
+                            // log(" hurray");
+                          } else if (result % 2 == 0) {
+                            // log("try again");
+                          } else {
+                            // log(" hurray");
+                          }
+                        }),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: AppColors.backgroundGrey2,
+                      ),
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 40,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: AppColors.mainColor,
+                      ),
+                      alignment: Alignment.center,
+                      height: 30,
+                      width: 30,
+                    )
+                  ],
+                ),
               ),
             ),
             Text("$spinsLeft spin left",
