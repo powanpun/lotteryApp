@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:predictandwin/global_widget/custom_appbar/titlebar.dart';
-import 'package:predictandwin/presentation/bottom_nav/homepage/_homepage_sections/featured_prediction_section.dart';
-import 'package:predictandwin/presentation/bottom_nav/homepage/_homepage_sections/fortune_section.dart';
-import 'package:predictandwin/presentation/bottom_nav/homepage/_homepage_sections/guild_section.dart';
-import 'package:predictandwin/presentation/bottom_nav/homepage/_homepage_sections/lottery_section.dart';
-import 'package:predictandwin/presentation/bottom_nav/homepage/_homepage_sections/other_prediction_section.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/homepage_sections/featured_prediction_section.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/homepage_sections/fortune_section.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/homepage_sections/guild_section.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/homepage_sections/lottery_section.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/homepage_sections/other_prediction_section.dart';
 import 'package:predictandwin/resources/appColor/app_colors.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
 

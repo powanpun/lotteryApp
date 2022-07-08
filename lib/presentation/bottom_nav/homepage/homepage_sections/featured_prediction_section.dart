@@ -47,10 +47,11 @@ class FeaturedPredictionList extends StatelessWidget {
                             onTap: () => Navigator.pushNamed(
                                 context, predictionDetailPageRoute),
                             child: Container(
-                              decoration: customeBoxDecoration(),
+                              decoration:
+                                  customeBoxDecorationWithShadowForSmall(),
                               width: getScreemWidth(context) / 3,
                               height: getScreemWidth(context) / 3,
-                              margin: const EdgeInsets.only(right: 8),
+                              margin: const EdgeInsets.only(right: 8, left: 2),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:predictandwin/resources/appColor/app_colors.dart';
+import 'package:predictandwin/utils/custom_text.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
 
 class WinnersPage extends StatefulWidget {
@@ -21,158 +22,31 @@ class _WinnersPageState extends State<WinnersPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            customHeading32("Leader board", AppColors.black),
+            customSizedBoxh16(),
             Wrap(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Badge(
-                          position: BadgePosition.topEnd(top: 0, end: 5),
-                          toAnimate: false,
-                          shape: BadgeShape.circle,
-                          badgeColor: AppColors.mainColor,
-                          borderRadius: BorderRadius.circular(8),
-                          badgeContent: const Text('2',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: SizedBox(
-                              height: 80,
-                              width: 80,
-                              child: Image.network(
-                                "https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840_960_720.jpg",
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        customSizedBoxh8(),
-                        Text("player",
-                            style: GoogleFonts.lato(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        Row(
-                          children: [
-                            Image.asset(
-                              "assets/images/gold-bars.png",
-                              scale: 4,
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Text("115",
-                                style: GoogleFonts.lato(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.black)),
-                          ],
-                        ),
-                      ],
+                  children: const [
+                    LeaderBoardItem(
+                      playerName: "Sonahang Rai",
+                      gold: "900",
+                      rank: "2",
+                      margin: 0.0,
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 64),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Badge(
-                            position: BadgePosition.topEnd(top: 0, end: 5),
-                            toAnimate: false,
-                            shape: BadgeShape.circle,
-                            badgeColor: AppColors.mainColor,
-                            borderRadius: BorderRadius.circular(8),
-                            badgeContent: const Text('1',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18)),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(100),
-                              child: SizedBox(
-                                height: 80,
-                                width: 80,
-                                child: Image.network(
-                                  "https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840_960_720.jpg",
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                          customSizedBoxh8(),
-                          Text("player",
-                              style: GoogleFonts.lato(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "assets/images/gold-bars.png",
-                                scale: 4,
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Text("115",
-                                  style: GoogleFonts.lato(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.black)),
-                            ],
-                          ),
-                        ],
-                      ),
+                    LeaderBoardItem(
+                      playerName: "Powan Pun",
+                      gold: "1000",
+                      rank: "1",
+                      margin: 60,
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Badge(
-                          position: BadgePosition.topEnd(top: 0, end: 5),
-                          toAnimate: false,
-                          shape: BadgeShape.circle,
-                          badgeColor: AppColors.mainColor,
-                          borderRadius: BorderRadius.circular(8),
-                          badgeContent: const Text('3',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: SizedBox(
-                              height: 80,
-                              width: 80,
-                              child: Image.network(
-                                "https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840_960_720.jpg",
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        customSizedBoxh8(),
-                        Text("player",
-                            style: GoogleFonts.lato(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        Row(
-                          children: [
-                            Image.asset(
-                              "assets/images/gold-bars.png",
-                              scale: 4,
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Text("115",
-                                style: GoogleFonts.lato(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.black)),
-                          ],
-                        ),
-                      ],
-                    )
+                    LeaderBoardItem(
+                      playerName: "Shyam",
+                      gold: "800",
+                      rank: "3",
+                      margin: 0,
+                    ),
                   ],
                 ),
               ],
@@ -189,7 +63,7 @@ class _WinnersPageState extends State<WinnersPage> {
                       children: [
                         Expanded(
                           flex: 1,
-                          child: Text((index + 3).toString(),
+                          child: Text((index + 4).toString(),
                               style: GoogleFonts.lato(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -239,6 +113,80 @@ class _WinnersPageState extends State<WinnersPage> {
           ],
         ),
       ))),
+    );
+  }
+}
+
+class LeaderBoardItem extends StatelessWidget {
+  final String playerName;
+  final String gold;
+  final String rank;
+  final double margin;
+
+  const LeaderBoardItem({
+    Key? key,
+    required this.playerName,
+    required this.gold,
+    required this.rank,
+    required this.margin,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        margin: EdgeInsets.only(bottom: margin),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Badge(
+              position: BadgePosition.topEnd(top: 0, end: 0),
+              toAnimate: false,
+              shape: BadgeShape.circle,
+              badgeColor: AppColors.mainColor,
+              borderRadius: BorderRadius.circular(8),
+              badgeContent: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Text(rank,
+                    style: const TextStyle(color: Colors.white, fontSize: 18)),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: SizedBox(
+                  height: 80,
+                  width: 80,
+                  child: Image.network(
+                    "https://cdn.pixabay.com/photo/2021/10/23/19/25/cat-6735840_960_720.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            customSizedBoxh8(),
+            Text(playerName,
+                style: GoogleFonts.lato(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black)),
+            Row(
+              children: [
+                Image.asset(
+                  "assets/images/gold-bars.png",
+                  scale: 4,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Text(gold,
+                    style: GoogleFonts.lato(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.black)),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

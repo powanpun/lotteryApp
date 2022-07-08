@@ -45,9 +45,10 @@ class WeeklyLotteryView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Container(
             height: getScreemWidth(context) / 2.5,
             width: double.infinity,
+            decoration: customeBoxDecorationWithShadowDark(),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Stack(fit: StackFit.passthrough, children: [
@@ -95,9 +96,10 @@ class SpinView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Container(
             height: getScreemWidth(context) / 2.5,
             width: double.infinity,
+            decoration: customeBoxDecorationWithShadowDark(),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Stack(fit: StackFit.passthrough, children: [

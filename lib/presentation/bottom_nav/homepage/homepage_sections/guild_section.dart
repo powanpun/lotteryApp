@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:predictandwin/app_controller/logics/lottery/bloc/lottery_bloc.dart';
 import 'package:predictandwin/resources/AppColor/app_colors.dart';
+import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custom_text.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
 
@@ -21,9 +22,10 @@ class GuildSection extends StatelessWidget {
             children: [
               customHeading1("Create Your Own Guild", AppColors.black),
               customSizedBoxh16(),
-              SizedBox(
+              Container(
                 height: MediaQuery.of(context).size.height / 4,
                 width: double.infinity,
+                decoration: customeBoxDecorationWithShadow(),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Stack(fit: StackFit.passthrough, children: [

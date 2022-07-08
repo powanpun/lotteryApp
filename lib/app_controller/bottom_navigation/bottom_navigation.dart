@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/homepage.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/hotdeals/hotdealspage.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/notification/notification_page.dart';
 import 'package:predictandwin/resources/appColor/app_colors.dart';
 
 import '../../presentation/bottom_nav/winners/winners.dart';
@@ -16,8 +18,8 @@ class NavigationHandlerPageState extends State<NavigationHandlerPage> {
   int currentTab = 0;
   final List<Widget> screens = [
     const HomePage(),
-    const WinnersPage(),
-    const HomePage(),
+    const HotDealsPage(),
+    const NotificationPage(),
     const WinnersPage(),
   ];
   final PageStorageBucket bucket = PageStorageBucket();
@@ -65,7 +67,7 @@ class NavigationHandlerPageState extends State<NavigationHandlerPage> {
                         : Colors.black54),
                 onPressed: () {
                   setState(() {
-                    currentScreen = const HomePage();
+                    currentScreen = const HotDealsPage();
                     currentTab = 1;
                   });
                 },
@@ -78,7 +80,7 @@ class NavigationHandlerPageState extends State<NavigationHandlerPage> {
                         : Colors.black54),
                 onPressed: () {
                   setState(() {
-                    currentScreen = const WinnersPage();
+                    currentScreen = const NotificationPage();
                     currentTab = 2;
                   });
                 },
