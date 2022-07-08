@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
                   parent: AlwaysScrollableScrollPhysics()),
               slivers: <Widget>[
             const SliverAppBar(
+                elevation: 0,
                 backgroundColor: AppColors.backgroundGrey,
                 automaticallyImplyLeading: false,
                 pinned: true,
