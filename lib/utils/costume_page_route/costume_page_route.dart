@@ -94,10 +94,10 @@ class CostumPageRoutTop extends MaterialPageRoute {
   }
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 200);
+  Duration get transitionDuration => const Duration(milliseconds: 400);
 
   @override
-  Duration get reverseTransitionDuration => const Duration(milliseconds: 200);
+  Duration get reverseTransitionDuration => const Duration(milliseconds: 400);
 }
 
 class CostumPageRouteFadeIn extends MaterialPageRoute {
@@ -119,8 +119,8 @@ class CostumPageRouteFadeIn extends MaterialPageRoute {
   }
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 200);
+  Duration get transitionDuration => const Duration(milliseconds: 400);
 
   @override
-  Duration get reverseTransitionDuration => const Duration(milliseconds: 200);
+  Duration get reverseTransitionDuration => const Duration(milliseconds: 400);
 }

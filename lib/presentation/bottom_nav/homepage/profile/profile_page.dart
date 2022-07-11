@@ -64,7 +64,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     customSizedBoxh16(),
                     const AchievementSetion(),
                     customSizedBoxh16(),
-                    Expanded(child: Container()),
+                    Expanded(child: Column(children: [])),
                     const LogOutButton()
                   ])),
             )

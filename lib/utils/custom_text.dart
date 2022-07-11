@@ -21,6 +21,7 @@ Text customSubHeading1(String text, Color color) {
 
 Text customDescription1(String text, Color color) {
   return Text(text,
+      textAlign: TextAlign.justify,
       style: GoogleFonts.lato(
           fontSize: 14, fontWeight: FontWeight.normal, color: color));
 }

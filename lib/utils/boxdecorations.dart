@@ -29,7 +29,7 @@ BoxDecoration customeBoxDecorationWithShadow() {
 BoxDecoration customeBoxDecorationWithShadowDark() {
   return BoxDecoration(boxShadow: [
     BoxShadow(
-      color: Colors.grey.withOpacity(0.8),
+      color: Colors.grey.withOpacity(0.5),
       spreadRadius: 2,
       blurRadius: 2, // changes position of shadow
     ),

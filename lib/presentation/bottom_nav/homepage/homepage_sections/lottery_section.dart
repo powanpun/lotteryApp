@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,11 +12,31 @@ import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custom_text.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
 import 'package:predictandwin/utils/padding.dart';
+import 'package:slide_countdown/slide_countdown.dart';
 
-class LotteryBanner extends StatelessWidget {
+class LotteryBanner extends StatefulWidget {
   const LotteryBanner({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<LotteryBanner> createState() => _LotteryBannerState();
+}
+
+class _LotteryBannerState extends State<LotteryBanner> {
+  var d1 = DateTime.now();
+  var date = "2022-09-11 24:00:00";
+  late DateTime d2;
+  late Duration differenceInTime;
+
+  @override
+  void initState() {
+    log(d1.toString());
+    d2 = DateTime.parse(date);
+    differenceInTime = d2.difference(d1);
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,17 +69,20 @@ class LotteryBanner extends StatelessWidget {
                                 child: customSubHeading1(
                                     AppText.homepageLotterySubTitleText,
                                     AppColors.black)),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 4, horizontal: 8),
-                              decoration: BoxDecoration(
-                                  color: AppColors.yellow,
-                                  borderRadius: BorderRadius.circular(4)),
-                              child: Text("Ends in: 31 july 2022",
-                                  style: GoogleFonts.lato(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black)),
+                            Text("Ends in: ",
+                                style: GoogleFonts.lato(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black)),
+                            customSizedBoxh8(),
+                            SlideCountdownSeparated(
+                              showZeroValue: true,
+                              duration: differenceInTime,
+                              height: 25,
+                              width: 25,
+                              textStyle: TextStyle(
+                                  fontSize: 12, color: AppColors.white),
+                              padding: padding4(),
                             ),
                             customSizedBoxh16(),
                             const CustomeButtomGreen(),

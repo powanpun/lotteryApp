@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:predictandwin/global_widget/custom_appbar/titlebarwithcart.dart';
-import 'package:predictandwin/resources/appColor/app_colors.dart';
+import 'package:predictandwin/global_widget/buttons/custome_back_button.dart';
+import 'package:predictandwin/resources/AppColor/app_colors.dart';
 import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custom_dialog.dart';
 import 'package:predictandwin/utils/custom_text.dart';
 import 'package:predictandwin/utils/padding.dart';
 
-class HotDealsPage extends StatefulWidget {
-  const HotDealsPage({Key? key}) : super(key: key);
+import '../../../../../global_widget/custom_appbar/titlebarwithcart.dart';
+
+class PurchaseGoldPage extends StatefulWidget {
+  const PurchaseGoldPage({Key? key}) : super(key: key);
 
   @override
-  State<HotDealsPage> createState() => _HotDealsPageState();
+  State<PurchaseGoldPage> createState() => _PurchaseGoldPageState();
 }
 
-class _HotDealsPageState extends State<HotDealsPage> {
+class _PurchaseGoldPageState extends State<PurchaseGoldPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,14 +26,12 @@ class _HotDealsPageState extends State<HotDealsPage> {
             parent: AlwaysScrollableScrollPhysics()),
         slivers: <Widget>[
           const SliverAppBar(
-              elevation: 0,
-              backgroundColor: AppColors.backgroundGrey,
-              automaticallyImplyLeading: false,
-              pinned: true,
-              flexibleSpace: Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-                child: TitleBarWithCart(),
-              )),
+            elevation: 0,
+            backgroundColor: AppColors.backgroundGrey,
+            automaticallyImplyLeading: true,
+            iconTheme: IconThemeData(color: Colors.black),
+            pinned: true,
+          ),
           SliverPadding(
             padding: padding16(),
             sliver: SliverGrid(
@@ -62,9 +62,8 @@ class _HotDealsPageState extends State<HotDealsPage> {
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(16),
                                   topRight: Radius.circular(16)),
-                              child: Image.network(
-                                "https://img.freepik.com/free-psd/smartwatch-mockup_439185-553.jpg?t=st=1657274444~exp=1657275044~hmac=645c74f3848ca7bd762341738cb340b2f4261a136316afa3d74f13a4b5eb691b&w=996",
-                                fit: BoxFit.cover,
+                              child: Image.asset(
+                                "assets/images/gold-bars.png",
                               ),
                             ),
                           ),
@@ -73,15 +72,11 @@ class _HotDealsPageState extends State<HotDealsPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               customSubHeading1(
-                                  "Product $index", AppColors.black),
+                                  "Golds ${(index + 1) * 5}", AppColors.black),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Image.asset(
-                                    "assets/images/gold-bars.png",
-                                    scale: 4,
-                                  ),
-                                  Text("115",
+                                  Text("Rs. ${(index + 5) * 10}",
                                       style: GoogleFonts.lato(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -95,7 +90,7 @@ class _HotDealsPageState extends State<HotDealsPage> {
                     ),
                   );
                 },
-                childCount: 50,
+                childCount: 8,
               ),
             ),
           ),

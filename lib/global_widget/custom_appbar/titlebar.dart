@@ -14,27 +14,32 @@ class TitleBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 2),
-          decoration: BoxDecoration(
-              color: AppColors.mainColorLight,
-              borderRadius: BorderRadius.circular(8)),
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          child: Row(
-            children: [
-              Image.asset(
-                "assets/images/gold-bars.png",
-                scale: 1.5,
-              ),
-              const SizedBox(
-                width: 8,
-              ),
-              Text("115",
-                  style: GoogleFonts.lato(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.black)),
-            ],
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, purchaseGoldPageRoute);
+          },
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 2),
+            decoration: BoxDecoration(
+                color: AppColors.mainColorLight,
+                borderRadius: BorderRadius.circular(8)),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            child: Row(
+              children: [
+                Image.asset(
+                  "assets/images/gold-bars.png",
+                  scale: 1.5,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Text("115",
+                    style: GoogleFonts.lato(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.black)),
+              ],
+            ),
           ),
         ),
         SizedBox(

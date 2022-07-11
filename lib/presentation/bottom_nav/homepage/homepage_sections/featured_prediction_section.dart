@@ -33,7 +33,7 @@ class FeaturedPredictionList extends StatelessWidget {
               customHeading1("Featured Predictions", AppColors.black),
               customSizedBoxh16(),
               SizedBox(
-                height: getScreemWidth(context) / 3,
+                height: getScreemWidth(context) / 3.5,
                 width: double.infinity,
                 child: CustomScrollView(
                   physics: const BouncingScrollPhysics(
@@ -49,14 +49,14 @@ class FeaturedPredictionList extends StatelessWidget {
                             child: Container(
                               decoration:
                                   customeBoxDecorationWithShadowForSmall(),
-                              width: getScreemWidth(context) / 3,
-                              height: getScreemWidth(context) / 3,
+                              width: getScreemWidth(context) / 3.5,
+                              height: getScreemWidth(context) / 3.5,
                               margin: const EdgeInsets.only(right: 8, left: 2),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    height: getScreemWidth(context) / 3,
+                                    height: getScreemWidth(context) / 3.5,
                                     width: double.infinity,
                                     child: ClipRRect(
                                         borderRadius: BorderRadius.circular(16),

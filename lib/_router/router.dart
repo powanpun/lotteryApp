@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/homepage_sections/purchase_gold/purchase_gold_page.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/lottery/lottery_detail_page.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/prediction/prediction_detail.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/profile/profile_page.dart';
@@ -16,6 +17,7 @@ const String lotteryDetailPageRoute = "/lotteryDetailPage";
 const String weeklylotteryPageRoute = "/weeklylotteryPage";
 const String profilePageRoute = "/profilePage";
 const String predictionDetailPageRoute = "/predictionDetailPage";
+const String purchaseGoldPageRoute = "/purchaseGoldPage";
 
 class AppRoute {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -25,22 +27,25 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const LoginPage());
 
       case bottomNavigationRoute:
-        return MaterialPageRoute(
+        return CostumPageRouteFadeIn(
             builder: (context) => const NavigationHandlerPage());
       case fortuneWheelPageRoute:
-        return CostumPageRouteLeft(
+        return CostumPageRouteFadeIn(
             builder: (context) => const FortuneWheelPage());
       case lotteryDetailPageRoute:
-        return CostumPageRoutTop(
+        return CostumPageRouteFadeIn(
             builder: (context) => const LotteryDetailPage());
       case weeklylotteryPageRoute:
-        return CostumPageRouteRight(
+        return CostumPageRouteFadeIn(
             builder: (context) => const WeeklyLottery());
       case predictionDetailPageRoute:
         return CostumPageRouteFadeIn(
             builder: (context) => const PredictionDetailPage());
       case profilePageRoute:
-        return CostumPageRoutTop(builder: (context) => const ProfilePage());
+        return CostumPageRouteFadeIn(builder: (context) => const ProfilePage());
+      case purchaseGoldPageRoute:
+        return CostumPageRouteFadeIn(
+            builder: (context) => const PurchaseGoldPage());
 
       default:
         return _errorRoute();
