@@ -73,27 +73,27 @@ class NavigationHandlerPageState extends State<NavigationHandlerPage> {
                 },
               ),
               IconButton(
-                tooltip: 'Notifications',
-                icon: Icon(Icons.message,
+                tooltip: 'Analytics',
+                icon: Icon(Icons.analytics,
                     color: currentTab == 2
                         ? Colors.green.shade700
                         : Colors.black54),
                 onPressed: () {
                   setState(() {
-                    currentScreen = const NotificationPage();
+                    currentScreen = const WinnersPage();
                     currentTab = 2;
                   });
                 },
               ),
               IconButton(
-                tooltip: 'Analytics',
-                icon: Icon(Icons.analytics,
+                tooltip: 'Notifications',
+                icon: Icon(Icons.message,
                     color: currentTab == 3
                         ? Colors.green.shade700
                         : Colors.black54),
                 onPressed: () {
                   setState(() {
-                    currentScreen = const WinnersPage();
+                    currentScreen = const NotificationPage();
                     currentTab = 3;
                   });
                 },

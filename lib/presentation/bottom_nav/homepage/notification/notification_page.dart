@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:predictandwin/presentation/bottom_nav/homepage/notification/annoucement_page.dart';
+import 'package:predictandwin/presentation/bottom_nav/homepage/notification/personal_notification_page.dart';
 import 'package:predictandwin/resources/appColor/app_colors.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -34,11 +35,8 @@ class _NotificationPageState extends State<NotificationPage> {
               ],
             ),
           ),
-          body: TabBarView(
-            children: [
-              AnnoucenemntPage(),
-              Icon(Icons.directions_transit),
-            ],
+          body: const TabBarView(
+            children: [AnnoucenemntPage(), PersonalNotificationPage()],
           ),
         ),
       ),

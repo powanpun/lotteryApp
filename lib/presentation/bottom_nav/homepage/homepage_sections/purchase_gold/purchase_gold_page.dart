@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:predictandwin/global_widget/buttons/custome_back_button.dart';
 import 'package:predictandwin/resources/AppColor/app_colors.dart';
 import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custom_dialog.dart';
 import 'package:predictandwin/utils/custom_text.dart';
 import 'package:predictandwin/utils/padding.dart';
-
-import '../../../../../global_widget/custom_appbar/titlebarwithcart.dart';
 
 class PurchaseGoldPage extends StatefulWidget {
   const PurchaseGoldPage({Key? key}) : super(key: key);
