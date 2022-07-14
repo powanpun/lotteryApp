@@ -4,7 +4,6 @@ import 'package:predictandwin/utils/boxdecorations.dart';
 import 'package:predictandwin/utils/custom_text.dart';
 import 'package:predictandwin/utils/custome_sized_box.dart';
 import 'package:predictandwin/utils/padding.dart';
-import 'package:predictandwin/utils/screensize.dart';
 
 class PersonalNotificationPage extends StatefulWidget {
   const PersonalNotificationPage({Key? key}) : super(key: key);

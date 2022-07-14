@@ -21,7 +21,7 @@ BoxDecoration customeBoxDecorationWithShadow() {
     BoxShadow(
       color: Colors.grey.withOpacity(0.3),
       spreadRadius: 2,
-      blurRadius: 7, // changes position of shadow
+      blurRadius: 7,
     ),
   ], borderRadius: BorderRadius.circular(16), color: AppColors.backgroundGrey2);
 }
@@ -31,7 +31,7 @@ BoxDecoration customeBoxDecorationWithShadowDark() {
     BoxShadow(
       color: Colors.grey.withOpacity(0.5),
       spreadRadius: 2,
-      blurRadius: 2, // changes position of shadow
+      blurRadius: 2,
     ),
   ], borderRadius: BorderRadius.circular(16), color: AppColors.blackLight);
 }

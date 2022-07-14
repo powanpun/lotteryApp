@@ -71,7 +71,6 @@ class AuthenticationBloc
     try {
       await _authenticationRepository.signInWithGoogle();
     } catch (e) {
-      log("auth error $e");
       emit(const AuthenticationState.unauthenticated());
     }
   }
